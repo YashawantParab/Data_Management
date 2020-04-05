@@ -1,0 +1,1043 @@
+[
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column CARRIER_OPERATION using expression value.toString()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "CARRIER_OPERATION",
+    "expression": "value.toString()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column CARRIER_OPERATION using expression grel:value.replace(\"A\", \"Interstate\")",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "CARRIER_OPERATION",
+    "expression": "grel:value.replace(\"A\", \"Interstate\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column CARRIER_OPERATION using expression grel:value.replace(\"C\", \"Intrastate Non-Hazmat\")",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "CARRIER_OPERATION",
+    "expression": "grel:value.replace(\"C\", \"Intrastate Non-Hazmat\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column CARRIER_OPERATION using expression grel:value.replace(\"B\", \"Intrastate Hazmat\")",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "CARRIER_OPERATION",
+    "expression": "grel:value.replace(\"B\", \"Intrastate Hazmat\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/column-split",
+    "description": "Split column PHY_ZIP by separator",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "PHY_ZIP",
+    "guessCellType": true,
+    "removeOriginalColumn": true,
+    "mode": "separator",
+    "separator": "-",
+    "regex": false,
+    "maxColumns": 0
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column PHY_ZIP 2",
+    "columnName": "PHY_ZIP 2"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column PHY_ZIP 3",
+    "columnName": "PHY_ZIP 3"
+  },
+  {
+    "op": "core/column-rename",
+    "description": "Rename column PHY_ZIP 1 to PHY_ZIP_OR",
+    "oldColumnName": "PHY_ZIP 1",
+    "newColumnName": "PHY_ZIP_OR"
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column PHY_ZIP_OR",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "PHY_ZIP_OR",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "84066Q"
+        ],
+        "to": "84066"
+      }
+    ]
+  },
+  {
+    "op": "core/column-split",
+    "description": "Split column MAILING_ZIP by separator",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "MAILING_ZIP",
+    "guessCellType": true,
+    "removeOriginalColumn": true,
+    "mode": "separator",
+    "separator": "-",
+    "regex": false,
+    "maxColumns": 0
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column MAILING_ZIP 2",
+    "columnName": "MAILING_ZIP 2"
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column MAILING_ZIP 3",
+    "columnName": "MAILING_ZIP 3"
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column MAILING_ZIP 1",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "MAILING_ZIP 1",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "84066Q"
+        ],
+        "to": "84066"
+      }
+    ]
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column MAILING_ZIP 1",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "MAILING_ZIP 1",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "84128X"
+        ],
+        "to": "84128"
+      }
+    ]
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column LEGAL_NAME using expression value.trim()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "LEGAL_NAME",
+    "expression": "value.trim()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column PHY_ZIP_OR using expression value.trim()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "PHY_ZIP_OR",
+    "expression": "value.trim()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column PHY_COUNTRY",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "PHY_COUNTRY",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "US"
+        ],
+        "to": "United States"
+      }
+    ]
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column MAILING_COUNTRY",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "PHY_COUNTRY",
+          "expression": "value",
+          "columnName": "PHY_COUNTRY",
+          "invert": false,
+          "selection": [
+            {
+              "v": {
+                "v": "United States",
+                "l": "United States"
+              }
+            }
+          ],
+          "selectNumber": false,
+          "selectDateTime": false,
+          "selectBoolean": false,
+          "omitBlank": false,
+          "selectBlank": false,
+          "omitError": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "MAILING_COUNTRY",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "US"
+        ],
+        "to": "United States"
+      }
+    ]
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column MCS150_DATE using expression value.toDate()",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "PHY_COUNTRY",
+          "expression": "value",
+          "columnName": "PHY_COUNTRY",
+          "invert": false,
+          "selection": [
+            {
+              "v": {
+                "v": "United States",
+                "l": "United States"
+              }
+            }
+          ],
+          "selectNumber": false,
+          "selectDateTime": false,
+          "selectBoolean": false,
+          "omitBlank": false,
+          "selectBlank": false,
+          "omitError": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "MAILING_COUNTRY",
+          "expression": "value",
+          "columnName": "MAILING_COUNTRY",
+          "invert": false,
+          "selection": [
+            {
+              "v": {
+                "v": "United States",
+                "l": "United States"
+              }
+            }
+          ],
+          "selectNumber": false,
+          "selectDateTime": false,
+          "selectBoolean": false,
+          "omitBlank": false,
+          "selectBlank": false,
+          "omitError": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "MCS150_DATE",
+    "expression": "value.toDate()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column CARRIER_OPERATION using expression value.trim()",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "PHY_COUNTRY",
+          "expression": "value",
+          "columnName": "PHY_COUNTRY",
+          "invert": false,
+          "selection": [
+            {
+              "v": {
+                "v": "United States",
+                "l": "United States"
+              }
+            }
+          ],
+          "selectNumber": false,
+          "selectDateTime": false,
+          "selectBoolean": false,
+          "omitBlank": false,
+          "selectBlank": false,
+          "omitError": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "MAILING_COUNTRY",
+          "expression": "value",
+          "columnName": "MAILING_COUNTRY",
+          "invert": false,
+          "selection": [
+            {
+              "v": {
+                "v": "United States",
+                "l": "United States"
+              }
+            }
+          ],
+          "selectNumber": false,
+          "selectDateTime": false,
+          "selectBoolean": false,
+          "omitBlank": false,
+          "selectBlank": false,
+          "omitError": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "CARRIER_OPERATION",
+    "expression": "value.trim()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/row-removal",
+    "description": "Remove rows",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "PHY_COUNTRY",
+          "expression": "value",
+          "columnName": "PHY_COUNTRY",
+          "invert": false,
+          "selection": [
+            {
+              "v": {
+                "v": "United States",
+                "l": "United States"
+              }
+            }
+          ],
+          "selectNumber": false,
+          "selectDateTime": false,
+          "selectBoolean": false,
+          "omitBlank": false,
+          "selectBlank": false,
+          "omitError": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "MAILING_COUNTRY",
+          "expression": "value",
+          "columnName": "MAILING_COUNTRY",
+          "invert": true,
+          "selection": [
+            {
+              "v": {
+                "v": "United States",
+                "l": "United States"
+              }
+            }
+          ],
+          "selectNumber": false,
+          "selectDateTime": false,
+          "selectBoolean": false,
+          "omitBlank": false,
+          "selectBlank": false,
+          "omitError": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "Flagged Rows",
+          "expression": "row.flagged.toString()",
+          "columnName": "",
+          "invert": false,
+          "selection": [
+            {
+              "v": {
+                "v": "true",
+                "l": "true"
+              }
+            }
+          ],
+          "selectNumber": false,
+          "selectDateTime": false,
+          "selectBoolean": false,
+          "omitBlank": false,
+          "selectBlank": false,
+          "omitError": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    }
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column CARRIER_OPERATION using expression value.toString()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "CARRIER_OPERATION",
+    "expression": "value.toString()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column CARRIER_OPERATION using expression grel:value.replace(\"A\", \"Interstate\")",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "CARRIER_OPERATION",
+    "expression": "grel:value.replace(\"A\", \"Interstate\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column CARRIER_OPERATION using expression grel:value.replace(\"C\", \"Intrastate Non-Hazmat\")",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "CARRIER_OPERATION",
+    "expression": "grel:value.replace(\"C\", \"Intrastate Non-Hazmat\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column CARRIER_OPERATION using expression grel:value.replace(\"B\", \"Intrastate Hazmat\")",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "CARRIER_OPERATION",
+    "expression": "grel:value.replace(\"B\", \"Intrastate Hazmat\")",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column PHY_ZIP_OR",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "PHY_ZIP_OR",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "84066Q"
+        ],
+        "to": "84066"
+      }
+    ]
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column MAILING_ZIP 1",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "MAILING_ZIP 1",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "84066Q"
+        ],
+        "to": "84066"
+      }
+    ]
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column MAILING_ZIP 1",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "MAILING_ZIP 1",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "84128X"
+        ],
+        "to": "84128"
+      }
+    ]
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column LEGAL_NAME using expression value.trim()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "LEGAL_NAME",
+    "expression": "value.trim()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column PHY_ZIP_OR using expression value.trim()",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "PHY_ZIP_OR",
+    "expression": "value.trim()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column PHY_COUNTRY",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "PHY_COUNTRY",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "US"
+        ],
+        "to": "United States"
+      }
+    ]
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column MAILING_COUNTRY",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "PHY_COUNTRY",
+          "expression": "value",
+          "columnName": "PHY_COUNTRY",
+          "invert": false,
+          "selection": [
+            {
+              "v": {
+                "v": "United States",
+                "l": "United States"
+              }
+            }
+          ],
+          "selectNumber": false,
+          "selectDateTime": false,
+          "selectBoolean": false,
+          "omitBlank": false,
+          "selectBlank": false,
+          "omitError": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "MAILING_COUNTRY",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "US"
+        ],
+        "to": "United States"
+      }
+    ]
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column MCS150_DATE using expression value.toDate()",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "PHY_COUNTRY",
+          "expression": "value",
+          "columnName": "PHY_COUNTRY",
+          "invert": false,
+          "selection": [
+            {
+              "v": {
+                "v": "United States",
+                "l": "United States"
+              }
+            }
+          ],
+          "selectNumber": false,
+          "selectDateTime": false,
+          "selectBoolean": false,
+          "omitBlank": false,
+          "selectBlank": false,
+          "omitError": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "MAILING_COUNTRY",
+          "expression": "value",
+          "columnName": "MAILING_COUNTRY",
+          "invert": false,
+          "selection": [
+            {
+              "v": {
+                "v": "United States",
+                "l": "United States"
+              }
+            }
+          ],
+          "selectNumber": false,
+          "selectDateTime": false,
+          "selectBoolean": false,
+          "omitBlank": false,
+          "selectBlank": false,
+          "omitError": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "MCS150_DATE",
+    "expression": "value.toDate()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column CARRIER_OPERATION using expression value.trim()",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "PHY_COUNTRY",
+          "expression": "value",
+          "columnName": "PHY_COUNTRY",
+          "invert": false,
+          "selection": [
+            {
+              "v": {
+                "v": "United States",
+                "l": "United States"
+              }
+            }
+          ],
+          "selectNumber": false,
+          "selectDateTime": false,
+          "selectBoolean": false,
+          "omitBlank": false,
+          "selectBlank": false,
+          "omitError": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "MAILING_COUNTRY",
+          "expression": "value",
+          "columnName": "MAILING_COUNTRY",
+          "invert": false,
+          "selection": [
+            {
+              "v": {
+                "v": "United States",
+                "l": "United States"
+              }
+            }
+          ],
+          "selectNumber": false,
+          "selectDateTime": false,
+          "selectBoolean": false,
+          "omitBlank": false,
+          "selectBlank": false,
+          "omitError": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "CARRIER_OPERATION",
+    "expression": "value.trim()",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/row-removal",
+    "description": "Remove rows",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "PHY_COUNTRY",
+          "expression": "value",
+          "columnName": "PHY_COUNTRY",
+          "invert": false,
+          "selection": [
+            {
+              "v": {
+                "v": "United States",
+                "l": "United States"
+              }
+            }
+          ],
+          "selectNumber": false,
+          "selectDateTime": false,
+          "selectBoolean": false,
+          "omitBlank": false,
+          "selectBlank": false,
+          "omitError": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "MAILING_COUNTRY",
+          "expression": "value",
+          "columnName": "MAILING_COUNTRY",
+          "invert": true,
+          "selection": [
+            {
+              "v": {
+                "v": "United States",
+                "l": "United States"
+              }
+            }
+          ],
+          "selectNumber": false,
+          "selectDateTime": false,
+          "selectBoolean": false,
+          "omitBlank": false,
+          "selectBlank": false,
+          "omitError": false,
+          "selectError": false
+        },
+        {
+          "type": "list",
+          "name": "Flagged Rows",
+          "expression": "row.flagged.toString()",
+          "columnName": "",
+          "invert": false,
+          "selection": [
+            {
+              "v": {
+                "v": "true",
+                "l": "true"
+              }
+            }
+          ],
+          "selectNumber": false,
+          "selectDateTime": false,
+          "selectBoolean": false,
+          "omitBlank": false,
+          "selectBlank": false,
+          "omitError": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    }
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column MAILING_ZIP 1 using expression grel:\"0000\"[0,5-value.length()] + value",
+    "engineConfig": {
+      "facets": [
+        {
+          "type": "list",
+          "name": "MAILING_ZIP 1",
+          "expression": "value",
+          "columnName": "MAILING_ZIP 1",
+          "invert": false,
+          "selection": [],
+          "selectNumber": true,
+          "selectDateTime": false,
+          "selectBoolean": false,
+          "omitBlank": false,
+          "selectBlank": false,
+          "omitError": false,
+          "selectError": false
+        }
+      ],
+      "mode": "row-based"
+    },
+    "columnName": "MAILING_ZIP 1",
+    "expression": "grel:\"0000\"[0,5-value.length()] + value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column PHY_ZIP_OR using expression grel:\"0000\"[0,5-value.length()] + value",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "PHY_ZIP_OR",
+    "expression": "grel:\"0000\"[0,5-value.length()] + value",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column MAILING_ZIP 1 using expression grel:value.replace(/(\\p{IsAlphabetic})(?=\\d)/,'$1 ')",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "MAILING_ZIP 1",
+    "expression": "grel:value.replace(/(\\p{IsAlphabetic})(?=\\d)/,'$1 ')",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column MAILING_ZIP 1",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "MAILING_ZIP 1",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "000173015"
+        ],
+        "to": "000173"
+      }
+    ]
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column MAILING_ZIP 1 using expression grel:value.splitByLengths(6)",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "MAILING_ZIP 1",
+    "expression": "grel:value.splitByLengths(6)",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/text-transform",
+    "description": "Text transform on cells in column MAILING_ZIP 1 using expression grel:value.splitByLengths(5)",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "MAILING_ZIP 1",
+    "expression": "grel:value.splitByLengths(5)",
+    "onError": "keep-original",
+    "repeat": false,
+    "repeatCount": 10
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column MAILING_STATE",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "MAILING_STATE",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "DC"
+        ],
+        "to": "WA"
+      }
+    ]
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column PHY_STATE",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "PHY_STATE",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "DC"
+        ],
+        "to": "WA"
+      }
+    ]
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column HM_FLAG",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "HM_FLAG",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "N"
+        ],
+        "to": "NO"
+      }
+    ]
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column HM_FLAG",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "HM_FLAG",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "Y"
+        ],
+        "to": "Yes"
+      }
+    ]
+  },
+  {
+    "op": "core/mass-edit",
+    "description": "Mass edit cells in column HM_FLAG",
+    "engineConfig": {
+      "facets": [],
+      "mode": "row-based"
+    },
+    "columnName": "HM_FLAG",
+    "expression": "value",
+    "edits": [
+      {
+        "fromBlank": false,
+        "fromError": false,
+        "from": [
+          "NO"
+        ],
+        "to": "No"
+      }
+    ]
+  }
+]
